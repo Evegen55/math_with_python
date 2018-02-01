@@ -24,3 +24,6 @@
     loaded_model = pickle.load(open(filename_for_log_regr, 'rb')) #here is a loaded LogisticRegression
     ...
   
+## NOTE
+
+Be careful to point the `data_root` just because code loads and unpacks LOTS OF data
