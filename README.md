@@ -4,7 +4,10 @@
 
   Has solution in files like the spyder/tensorflow_examples_udacity_1_notmnist_soved_for_****k_set.ipynb
    
-  It used to solve classification problem with [LogisticRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) and
+  It used to solve classification problem with 
+  [LogisticRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) - 
+  [see docs](http://scikit-learn.org/stable/modules/linear_model.html#logistic-regression) - 
+  and
   
   gets next accuracy of predicting:
   - 0.804 for 10000 samples
