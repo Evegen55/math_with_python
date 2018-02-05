@@ -29,7 +29,11 @@
   
 ## NOTE
 
-Be careful to point the `data_root` just because code loads and unpacks LOTS OF data
+Be careful to point the `data_root` just because code loads and unpacks LOTS OF data  
+
+### [mnist_with_python.ipynb](https://raw.githubusercontent.com/Evegen55/math_with_python/master/src/jupiter/mnist_with_python.ipynb)
+
+Solved for MNIST dataset with LogisticRegression(solver='sag', multi_class='ovr', n_jobs=1) with score = 0.9182
 
 ## License
 
