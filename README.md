@@ -31,7 +31,10 @@
 
 Be careful to point the `data_root` just because code loads and unpacks LOTS OF data  
 
-### [mnist_with_python.ipynb](https://raw.githubusercontent.com/Evegen55/math_with_python/master/src/jupiter/mnist_with_python.ipynb)
+### [mnist_with_python.ipynb](https://github.com/Evegen55/math_with_python/blob/master/src/jupiter/mnist_with_python.ipynb)
+
+**Result of prediction for 7:**
+![**Result for 7**](https://raw.githubusercontent.com/Evegen55/math_with_python/master/resources/solved/tremendous_7_my_mnist.PNG)
 
 Solved for MNIST dataset with LogisticRegression(solver='sag', multi_class='ovr', n_jobs=1) with score = 0.9182
 
