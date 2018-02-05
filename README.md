@@ -1,6 +1,6 @@
 
 ## Examples for tensorflow 
-### [1_notmnist.pynn](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/udacity/1_notmnist.ipynb)
+### [1_notmnist.ipynb](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/udacity/1_notmnist.ipynb)
 
   Has solution in files like the src/spyder/tensorflow_examples_udacity_1_notmnist_soved_for_****k_set.ipynb
    
