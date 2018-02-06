@@ -38,6 +38,11 @@ Be careful to point the `data_root` just because code loads and unpacks LOTS OF 
 
 Solved for MNIST dataset with LogisticRegression(solver='sag', multi_class='ovr', n_jobs=1) with score = 0.9182
 
+[Another example from docs](http://scikit-learn.org/stable/auto_examples/linear_model/plot_sparse_logistic_regression_mnist.html#sphx-glr-auto-examples-linear-model-plot-sparse-logistic-regression-mnist-py)
+shows a classification vectors for each of classes we have:
+
+![classes](http://scikit-learn.org/stable/_images/sphx_glr_plot_sparse_logistic_regression_mnist_001.png)
+
 ## License
 
 Copyright (C) 2017 - 2017 [Evgenii Lartcev](https://github.com/Evegen55/) and contributors
