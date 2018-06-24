@@ -14,9 +14,16 @@ class MyWidget(QtWidgets.QWidget):
         self.text = QtWidgets.QLabel("Hello World")
         self.text.setAlignment(QtCore.Qt.AlignCenter)
 
+        # Create a button
+        self.buttonExit = QtWidgets.QPushButton('Exit')
+        # Connect the button "clicked" signal to the exit() method
+        # that finishes the QApplication
+        self.buttonExit.clicked.connect(app.exit)
+
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.text)
         self.layout.addWidget(self.button)
+        self.layout.addWidget(self.buttonExit)
         self.setLayout(self.layout)
 
         self.button.clicked.connect(self.magic)
