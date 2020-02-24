@@ -48,7 +48,7 @@ class MyWidget(QtWidgets.QWidget):
     def changeSystemVolume(self):
         self.audioMixer.setvolume(self.audioSlider.value())  # Sets volume for both channels
         current_volume = self.audioMixer.getvolume()
-        print(current_volume)
+        self.text.setText('both channels volume ' + str(current_volume[0]) + ', ' + str(current_volume[1]))
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
