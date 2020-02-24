@@ -2,15 +2,27 @@
 import sys
 import random
 from PySide2 import QtCore, QtWidgets, QtGui
+# import cv2 # ImportError: /usr/lib/x86_64-linux-gnu/libQt5OpenGL.so.5: undefined symbol: _Z12qTriangulateRK11QVectorPathRK10QTransformd
+import alsaaudio
 
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         QtWidgets.QWidget.__init__(self)
+        self.setFixedSize(800, 600)
 
         self.hello = ["Hallo Welt", "你好，世界", "Hei maailma",
             "Hola Mundo", "Привет мир"]
+        self.audioMixer = alsaaudio.Mixer()
 
         self.button = QtWidgets.QPushButton("Click me!")
+
+        self.audioSlider = QtWidgets.QSlider()
+        self.audioSlider.setMinimum(0)
+        self.audioSlider.setMaximum(100)
+        # self.audioSlider.setSizeIncrement(1)
+        self.audioSlider.setOrientation(QtCore.Qt.Vertical)
+        self.audioSlider.valueChanged.connect(self.volumeChange)
+
         self.text = QtWidgets.QLabel("Hello World")
         self.text.setAlignment(QtCore.Qt.AlignCenter)
 
@@ -19,19 +31,24 @@ class MyWidget(QtWidgets.QWidget):
         # Connect the button "clicked" signal to the exit() method
         # that finishes the QApplication
         self.buttonExit.clicked.connect(app.exit)
+        self.button.clicked.connect(self.magic)
 
         self.layout = QtWidgets.QVBoxLayout()
+        self.layout.addWidget(self.audioSlider)
         self.layout.addWidget(self.text)
         self.layout.addWidget(self.button)
         self.layout.addWidget(self.buttonExit)
         self.setLayout(self.layout)
 
-        self.button.clicked.connect(self.magic)
-
 
     def magic(self):
         self.text.setText(random.choice(self.hello))
+        # print(cv2.__version__)
 
+    def volumeChange(self):
+        self.audioMixer.setvolume(self.audioSlider.value()) # Sets volume for both sides
+        current_volume = self.audioMixer.getvolume()
+        print(current_volume)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
