@@ -19,9 +19,9 @@ class MyWidget(QtWidgets.QWidget):
         self.audioSlider = QtWidgets.QSlider()
         self.audioSlider.setMinimum(0)
         self.audioSlider.setMaximum(100)
-        # self.audioSlider.setSizeIncrement(1)
+        self.audioSlider.setSliderPosition(self.audioMixer.getvolume()[0])
         self.audioSlider.setOrientation(QtCore.Qt.Vertical)
-        self.audioSlider.valueChanged.connect(self.volumeChange)
+        self.audioSlider.valueChanged.connect(self.changeSystemVolume)
 
         self.text = QtWidgets.QLabel("Hello World")
         self.text.setAlignment(QtCore.Qt.AlignCenter)
@@ -45,8 +45,8 @@ class MyWidget(QtWidgets.QWidget):
         self.text.setText(random.choice(self.hello))
         # print(cv2.__version__)
 
-    def volumeChange(self):
-        self.audioMixer.setvolume(self.audioSlider.value()) # Sets volume for both sides
+    def changeSystemVolume(self):
+        self.audioMixer.setvolume(self.audioSlider.value())  # Sets volume for both channels
         current_volume = self.audioMixer.getvolume()
         print(current_volume)
 
